@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_OPENAI_COMPLETION</CLSNAME>
+    <LANGU>D</LANGU>
+    <DESCRIPT>Process Openai completion</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_CLIENT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Creates HTTP Cvient</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_ANSWER_FROM_QUERY_RESULT</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Extracts string from request resul</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_PAYLOAD</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Builds payload</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>M_API_KEY</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Key for using the API</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>M_MAX_TOKENS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Maximum number of tokens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>M_MODEL</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Model for Prompts</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PREPARE_CLIENT_FOR_REQUEST</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Perpares client for request</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>QUERY</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Executes query</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEND_AND_RECIEVE_REQUEST</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Sends request and recieves result</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_API_KEY</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Key for using the API</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_MAX_TOKENS</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Maximum number of tokens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>I_MODEL</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Openai model</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>QUERY</CMPNAME>
+     <SCONAME>I_PROMPT</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Prompt</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>QUERY</CMPNAME>
+     <SCONAME>R_ANSWER</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Answer</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>QUERY</CMPNAME>
+     <SCONAME>ZCX_OPENAI_EXCEPTION</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Openai Prompt Exception</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
