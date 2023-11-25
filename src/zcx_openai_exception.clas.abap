@@ -1,23 +1,22 @@
-class ZCX_OPENAI_EXCEPTION definition
-  public
-  inheriting from CX_STATIC_CHECK
-  final
-  create public .
+CLASS zcx_openai_exception DEFINITION
+  PUBLIC
+  INHERITING FROM cx_static_check FINAL
+  CREATE PUBLIC.
 
-public section.
+  PUBLIC SECTION.
+    INTERFACES if_t100_message.
+    INTERFACES if_t100_dyn_msg.
 
-  interfaces IF_T100_MESSAGE .
-  interfaces IF_T100_DYN_MSG .
+    METHODS constructor
+      IMPORTING textid    LIKE if_t100_message=>t100key OPTIONAL
+                !previous LIKE previous                 OPTIONAL.
 
-  methods CONSTRUCTOR
-    importing
-      !TEXTID like IF_T100_MESSAGE=>T100KEY optional
-      !PREVIOUS like PREVIOUS optional .
-  class-methods RAISE
-    raising
-      ZCX_OPENAI_EXCEPTION .
-protected section.
-private section.
+    CLASS-METHODS raise
+      RAISING zcx_openai_exception.
+
+  PROTECTED SECTION.
+
+  PRIVATE SECTION.
 ENDCLASS.
 
 
@@ -25,23 +24,18 @@ ENDCLASS.
 CLASS ZCX_OPENAI_EXCEPTION IMPLEMENTATION.
 
 
-  method CONSTRUCTOR.
-CALL METHOD SUPER->CONSTRUCTOR
-EXPORTING
-PREVIOUS = PREVIOUS
-.
-clear me->textid.
-if textid is initial.
-  IF_T100_MESSAGE~T100KEY = IF_T100_MESSAGE=>DEFAULT_TEXTID.
-else.
-  IF_T100_MESSAGE~T100KEY = TEXTID.
-endif.
-  endmethod.
+  METHOD constructor ##ADT_SUPPRESS_GENERATION.
+    super->constructor( previous = previous ).
+    CLEAR me->textid.
+    IF textid IS INITIAL.
+      if_t100_message~t100key = if_t100_message=>default_textid.
+    ELSE.
+      if_t100_message~t100key = textid.
+    ENDIF.
+  ENDMETHOD.
 
 
   METHOD raise.
-
     RAISE EXCEPTION TYPE zcx_openai_exception USING MESSAGE.
-
   ENDMETHOD.
 ENDCLASS.
